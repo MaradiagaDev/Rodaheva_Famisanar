@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Marco Principal -->
+  <div id="Contenedor_Principal">
+    <!-- Div menu lateral -->
+    <div id="Contenedor_Menu">
+      <img id="Img_MenuReducido" src="Assets/LogoFaminReducido.png">
+      <img id="Img_Menu" src="Assets/LogoFami.png">
+      <label id="Label_Menu" class="form-label">¿Qué quieres hacer?</label>
+      <button class="Btn_Menu"><img class="Img_botones" id="Img_botonesUno" src="Assets/Calendar.svg"><span
+          id="Texto_BotonesUno">Programar turno aquí</span></button>
+      <button class="Btn_Menu"><img class="Img_botones" id="Img_botonesDos" src="Assets/Ticket.svg"><span
+          id="Texto_BotonesDos">Cancelar o reprogramar turno</span></button>
+      <button class="Btn_Menu"><img class="Img_botones" id="Img_botonesTres" src="Assets/User.svg"><span
+          id="Texto_BotonesTres">Registra tu llegada</span></button>
+      <!-- boton de retraer -->
+      <button id="Btn_Retraer"><img id="Img_Retrear" src="Assets/Back.svg"></button>
+      <button id="Btn_Expandir"><img id="Img_Retrear" src="Assets/Expandir.svg"></button>
+    </div>
+    <!-- Div Content -->
+    <div id="Contenedor_Contenido">
+      <!-- Ultimo boton de navegacion  -->
+      <button id = "BtnFlecha"><img class="Img_Flecha" src="Assets/Arrow.svg"></button>
+      <!-- Barra de navegacion de bootstrap -->
+      <span id="NavBar">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg p-4">
+            <h5 class="text-body-emphasis h4">Famisanar <img id="Img_Nav" src="Assets/LogoFaminReducido.png"></h5>
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Programar turno aquí</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cancelar o reprogramar turno</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Registra tu llegada</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="navbar navbar">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </nav>
+      </span>
+      <!-- Parte del contenido -->
+      <div id="Contenedor_Carga">
+        <img id="ImgCarga" src="Assets/Carga.svg">
+      </div>
+
+      <!-- Parte del cuadro central -->
+      <form id="ContenedorCentral">
+        <fieldset enable>
+          <legend id="Label_Afiliados">Datos del afiliado</legend>
+
+          <div id="Contenedor_Entradas">
+            <div class="mb-1 entradas">
+              <select id="Select" class="form-select">
+                <option>Selecciona el tipo ID</option>
+              </select>
+            </div>
+            <div class="mb-1 entradas ident">
+              <input type="text" id="disabledTextInput" class="form-control" placeholder="No Identificación">
+            </div>
+          </div>
+
+
+          <div class="mb-3">
+          </div>
+          <button id="BtnSend" type="submit" class="btn btn-primary">Solicita tu código <img id="ImgSend"
+              src="Assets/Post.svg"></button>
+        </fieldset>
+      </form>
+
+    </div>
+
+  </div>
+  <script>
+    // Función para cambiar el estado retraído/no retraído del menú
+    document.getElementById('Btn_Retraer').addEventListener('click', function () {
+      // Retraer menu
+      var contenedorMenu = document.getElementById('Contenedor_Menu');
+      contenedorMenu.style.width = "5%";
+      contenedorMenu.style.transition = "0.3s"
+      //quitar visibilidades
+      var BtnRetraer = document.getElementById('Btn_Retraer');
+      BtnRetraer.style.display = "none";
+
+      var ImgPrincipal = document.getElementById('Img_Menu');
+      ImgPrincipal.style.display = "none";
+
+      var LabelMenu = document.getElementById('Label_Menu');
+      LabelMenu.style.display = "none";
+
+      var textoBotonUno = document.getElementById('Texto_BotonesUno');
+      textoBotonUno.style.display = "none";
+
+      var textoBotonDos = document.getElementById('Texto_BotonesDos');
+      textoBotonDos.style.display = "none";
+
+      var textoBotonTres = document.getElementById('Texto_BotonesTres');
+      textoBotonTres.style.display = "none";
+
+      //dar visibilidades
+      var BtnRetraer = document.getElementById('Btn_Expandir');
+      BtnRetraer.style.display = "Block";
+
+      var ImgLogoReducido = document.getElementById('Img_MenuReducido');
+      ImgLogoReducido.style.display = "Block";
+
+      //Cabiar tamaño de las imagenes
+      var ImgMenuUno = document.getElementById('Img_botonesUno');
+      ImgMenuUno.style.width = "95%";
+      ImgMenuUno.style.height = "98%";
+
+      var ImgMenuDos = document.getElementById('Img_botonesDos');
+      ImgMenuDos.style.width = "95%";
+      ImgMenuDos.style.height = "98%";
+
+      var ImgMenuTres = document.getElementById('Img_botonesTres');
+      ImgMenuTres.style.width = "95%";
+      ImgMenuTres.style.height = "98%";
+
+      //justificar al centro las imagenes
+      var ContenedorMenu = document.getElementById('Contenedor_Menu');
+      ContenedorMenu.style.justifyContent = "center";
+
+      //Cambiar de tamaño el ancho del panel de contenido
+      var PnlContenido = document.getElementById('Contenedor_Contenido');
+      PnlContenido.style.width = "95%";
+
+    });
+
+    //Funcionalidad del boton expandir
+    document.getElementById('Btn_Expandir').addEventListener('click', function () {
+      // Retraer menu
+      var contenedorMenu = document.getElementById('Contenedor_Menu');
+      contenedorMenu.style.width = "30%";
+      contenedorMenu.style.transition = "0.3s"
+      //quitar visibilidades
+      var BtnRetraer = document.getElementById('Btn_Retraer');
+      BtnRetraer.style.display = "Block";
+
+      var ImgPrincipal = document.getElementById('Img_Menu');
+      ImgPrincipal.style.display = "Block";
+
+      var LabelMenu = document.getElementById('Label_Menu');
+      LabelMenu.style.display = "Block";
+
+      var textoBotonUno = document.getElementById('Texto_BotonesUno');
+      textoBotonUno.style.display = "Block";
+
+      var textoBotonDos = document.getElementById('Texto_BotonesDos');
+      textoBotonDos.style.display = "Block";
+
+      var textoBotonTres = document.getElementById('Texto_BotonesTres');
+      textoBotonTres.style.display = "Block";
+
+      //dar visibilidades
+      var BtnRetraer = document.getElementById('Btn_Expandir');
+      BtnRetraer.style.display = "none";
+
+      var ImgLogoReducido = document.getElementById('Img_MenuReducido');
+      ImgLogoReducido.style.display = "none";
+
+      //Cabiar tamaño de las imagenes
+      var ImgMenuUno = document.getElementById('Img_botonesUno');
+      ImgMenuUno.style.width = "15%";
+      ImgMenuUno.style.height = "40%";
+
+      var ImgMenuDos = document.getElementById('Img_botonesDos');
+      ImgMenuDos.style.width = "15%";
+      ImgMenuDos.style.height = "40%";
+
+      var ImgMenuTres = document.getElementById('Img_botonesTres');
+      ImgMenuTres.style.width = "15%";
+      ImgMenuTres.style.height = "40%";
+
+      //justificar al centro las imagenes
+      var ContenedorMenu = document.getElementById('Contenedor_Menu');
+      ContenedorMenu.style.justifyContent = "start";
+
+      //Cambiar de tamaño el ancho del panel de contenido
+      var PnlContenido = document.getElementById('Contenedor_Contenido');
+      PnlContenido.style.width = "70%";
+
+    });
+  </script>
+</body>
+
+</html>

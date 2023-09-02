@@ -1,0 +1,246 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Etiquetas de contenido Principal */
+#Contenedor_Principal {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+#Contenedor_Menu {
+    background-color: #0A3D92;
+    height: 100vh;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+#Contenedor_Contenido {
+    background-color: white;
+    height: 100vh;
+    width: 70%;
+}
+
+/* Etiquetas componentes Menu */
+#Img_Menu {
+    width: 90%;
+    height: 20%;
+}
+
+#Contenedor_Menu label {
+    color: white;
+    width: 60%;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.9vw;
+    margin-top: 10%;
+}
+
+.Btn_Menu {
+    width: 60%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0A3D92;
+    color: white;
+    font-weight: 600;
+    font-size: 1vw;
+    margin-top: 5%;
+    border: 0;
+    border-bottom: 2px solid white;
+}
+
+.Btn_Menu:hover {
+    background-color: #6F99DE;
+}
+
+.Img_botones {
+    width: 15%;
+    height: 40%;
+    color: white;
+}
+
+#Img_Retrear {
+    width: 100%;
+    height: 100%;
+}
+
+#Btn_Retraer {
+    position: absolute;
+    width: 3%;
+    height: 5%;
+    border-radius: 99px;
+    border: 0;
+    background-color: #20BAE0;
+    top: 50%;
+    left: 28.5%;
+}
+
+#Btn_Expandir {
+    position: absolute;
+    display: none;
+    width: 2%;
+    height: 5%;
+    border-radius: 99px;
+    border: 0;
+    background-color: #20BAE0;
+    top: 50%;
+    left: 5.5%;
+}
+
+#Img_Nav {
+    width: 6%;
+    height: 10%;
+}
+
+#Img_MenuReducido {
+    position: absolute;
+    width: 3%;
+    height: 7%;
+    top: 3%;
+    left: 1%;
+    display: none;
+}
+
+#NavBar {
+    display: none;
+}
+
+/* Etiquetas de contenido */
+#ContenedorCentral {
+    margin: 5%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 1px solid #096ECD;
+}
+
+#Label_Afiliados {
+    font-weight: 600;
+    color: #096ECD;
+}
+
+#ImgSend {
+    width: 10%;
+    height: 80%;
+}
+
+#BtnSend {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+    background-color: #096ECD;
+}
+
+#ImgCarga {
+    width: 30vw;
+    height: 20%;
+}
+
+#Contenedor_Carga {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+#Contenedor_Entradas{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+}
+
+.entradas{
+    width: 45%;
+}
+
+.ident{
+margin-left: 3%;    
+}
+
+#BtnFlecha{
+    position: absolute;
+    width: 2vw;
+    aspect-ratio: 1 / 1;
+    border-radius: 99px;
+    top : 85%;
+    right: 5%;
+    border: 3px solid #20BAE0;
+}
+
+/* Media querys */
+@media (max-width: 1000px) {
+    #NavBar {
+        display: inline;
+    }
+
+    #Contenedor_Menu {
+        display: none;
+        width: 0%;
+    }
+
+    #Btn_Retraer {
+        display: none;
+    }
+
+    #Btn_Expandir {
+        display: none;
+    }
+
+    #Contenedor_Contenido {
+        width: 100vw !important;
+    }
+
+    #BtnSend {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 70%;
+        background-color: #096ECD;
+    }
+
+    #ImgCarga {
+        width: 60vw;
+        height: 20%;
+    }
+
+    #Contenedor_Entradas{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: start;
+        align-items: center;
+    }
+    
+    .entradas{
+        width: 100%;
+    }
+    
+    .ident{
+    margin-left: 0%;    
+    }
+
+    #BtnFlecha{
+        width: 10vw;
+    }
+}
