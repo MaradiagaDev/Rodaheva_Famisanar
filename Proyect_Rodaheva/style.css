@@ -188,6 +188,96 @@ margin-left: 3%;
     border: 3px solid #20BAE0;
 }
 
+/* Taps */
+.custom-tabs {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  .label {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ddd;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 20px;
+    line-height: 50px;
+  }
+  .taps {
+    border-radius: 99px;
+    border: 2px solid #007bff;
+    background-color: white;
+    font-weight: 600;
+    width: 10%;
+    aspect-ratio: 1 / 1;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative; /* Añade posición relativa a los .taps */
+   
+  }
+  
+  .taps:hover {
+    background-color: #DFE3E7;
+  }
+  
+  .tab-content {
+    display: flex;
+    width: 30%;
+    height: 5%;
+    position: relative; /* Añade posición relativa al .tab-content */
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .line {
+    width: 100%;
+    height: 10%;
+    background: #007bff;
+    position: absolute; /* Cambia a posición absoluta */
+    bottom: 50%; /* Centra verticalmente la línea */
+    transform: translateY(50%); /* Alinea la línea verticalmente */
+    transition: height 0.3s;
+    border-radius: 99px;
+  } 
+  
+  .tab-panel {
+    width: 100%;
+  }
+  
+  .panel-content {
+    display: none;
+  }
+  
+  input[type="radio"]:checked ~ .tab-content .label {
+    background: #007bff;
+    color: #fff;
+  }
+  
+  input[type="radio"]:checked ~ .line {
+    height: 20px; /* Ajusta el alto de la línea llena según tus necesidades */
+  }
+  
+  #tab1:checked ~ .tab-panel #content1,
+  #tab2:checked ~ .tab-panel #content2,
+  #tab3:checked ~ .tab-panel #content3 {
+    display: block;
+  }
+  
+  
 /* Media querys */
 @media (max-width: 1000px) {
     #NavBar {
@@ -243,4 +333,18 @@ margin-left: 3%;
     #BtnFlecha{
         width: 10vw;
     }
+
+    .taps {
+        width: 15%;
+      }
+      
+}
+@media (max-width: 850px) {
+    .taps {
+        width: 23%;
+      }
+
+      .tab-content {
+        width: 40%;
+      }
 }

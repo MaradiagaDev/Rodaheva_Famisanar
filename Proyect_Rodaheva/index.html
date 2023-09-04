@@ -33,8 +33,81 @@
     </div>
     <!-- Div Content -->
     <div id="Contenedor_Contenido">
+      <span id="NavBar">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg p-4">
+            <h5 class="text-body-emphasis h4">Famisanar <img id="Img_Nav" src="Assets/LogoFaminReducido.png"></h5>
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Programar turno aquí</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cancelar o reprogramar turno</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Registra tu llegada</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="navbar navbar">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </nav>
+      </span>
+      
+      <div class="custom-tabs">
+        <input type="radio" id="tab1" name="tabs" checked>
+        <input type="radio" id="tab2" name="tabs">
+        <input type="radio" id="tab3" name="tabs">
+        
+        <div class="tab-content">
+          <div class="line"></div>
+          <label for="tab1" class="taps">1</label>
+          <label for="tab2" class="taps">2</label>
+          <label for="tab3" class="taps">3</label>
+        </div>
+        
+        <div class="tab-panel">
+          <div class="panel-content" id="content1">
+                  <!-- Parte del cuadro central -->
+                  <form id="ContenedorCentral">
+                    <fieldset enable>
+                      <legend id="Label_Afiliados">Datos del afiliado</legend>
+                      <div id="Contenedor_Entradas">
+                        <div class="mb-1 entradas">
+                          <select id="Select" class="form-select">
+                            <option>Selecciona el tipo ID</option>
+                          </select>
+                        </div>
+                        <div class="mb-1 entradas ident">
+                          <input type="text" id="disabledTextInput" class="form-control" placeholder="No Identificación">
+                        </div>
+                      </div>
+      
+                      <div class="mb-3">
+                      </div>
+                      <button id="BtnSend" type="submit" class="btn btn-primary">Solicita tu código <img id="ImgSend"
+                          src="Assets/Post.svg"></button>
+                    </fieldset>
+                  </form>
+          </div>
+          <div class="panel-content" id="content2">
+            Contenido del Panel 2
+          </div>
+          <div class="panel-content" id="content3">
+            Contenido del Panel 3
+          </div>
+        </div>
+      </div>
+
       <!-- Ultimo boton de navegacion  -->
-      <button id = "BtnFlecha"><img class="Img_Flecha" src="Assets/Arrow.svg"></button>
+      <button id="BtnFlecha"><img class="Img_Flecha" src="Assets/Arrow.svg"></button>
       <!-- Barra de navegacion de bootstrap -->
       <span id="NavBar">
         <div class="collapse" id="navbarToggleExternalContent">
@@ -63,34 +136,6 @@
           </div>
         </nav>
       </span>
-      <!-- Parte del contenido -->
-      <div id="Contenedor_Carga">
-        <img id="ImgCarga" src="Assets/Carga.svg">
-      </div>
-
-      <!-- Parte del cuadro central -->
-      <form id="ContenedorCentral">
-        <fieldset enable>
-          <legend id="Label_Afiliados">Datos del afiliado</legend>
-
-          <div id="Contenedor_Entradas">
-            <div class="mb-1 entradas">
-              <select id="Select" class="form-select">
-                <option>Selecciona el tipo ID</option>
-              </select>
-            </div>
-            <div class="mb-1 entradas ident">
-              <input type="text" id="disabledTextInput" class="form-control" placeholder="No Identificación">
-            </div>
-          </div>
-
-
-          <div class="mb-3">
-          </div>
-          <button id="BtnSend" type="submit" class="btn btn-primary">Solicita tu código <img id="ImgSend"
-              src="Assets/Post.svg"></button>
-        </fieldset>
-      </form>
 
     </div>
 
